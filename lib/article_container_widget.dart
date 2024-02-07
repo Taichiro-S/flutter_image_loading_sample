@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_loading_sample/format_published_date.dart';
-import 'package:image_loading_sample/rss_feed_article_model.dart';
+import 'package:image_loading_sample/article_model.dart';
 import 'package:image_loading_sample/skelton_container_widget.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
 
@@ -11,7 +11,7 @@ class ArticleContainerWidget extends ConsumerWidget {
     super.key,
     required this.article,
   });
-  final RssFeedArticle article;
+  final Article article;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -1,17 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intl/intl.dart';
 import 'package:xml/xml.dart';
-part 'rss_feed_article_model.freezed.dart';
+part 'article_model.freezed.dart';
 
 @freezed
-class RssFeedArticle with _$RssFeedArticle {
-  const factory RssFeedArticle({
+class Article with _$Article {
+  const factory Article({
     required String title,
     required DateTime pubDate,
     required String enclosureUrl,
-  }) = _RssFeedArticle;
+  }) = _Article;
 
-  factory RssFeedArticle.fromXml(XmlElement node) {
+  factory Article.fromXml(XmlElement node) {
     final dateFormat = DateFormat('EEE, dd MMM yyyy HH:mm:ss z', 'en_US');
     DateTime parsedDate;
     try {
@@ -20,7 +20,7 @@ class RssFeedArticle with _$RssFeedArticle {
     } catch (e) {
       parsedDate = DateTime.now();
     }
-    return RssFeedArticle(
+    return Article(
       title: node.findElements('title').first.value ?? '',
       pubDate: parsedDate,
       enclosureUrl:

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'rss_feed_article_model.dart';
+part of 'article_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,29 +15,27 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$RssFeedArticle {
+mixin _$Article {
   String get title => throw _privateConstructorUsedError;
   DateTime get pubDate => throw _privateConstructorUsedError;
   String get enclosureUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RssFeedArticleCopyWith<RssFeedArticle> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ArticleCopyWith<Article> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RssFeedArticleCopyWith<$Res> {
-  factory $RssFeedArticleCopyWith(
-          RssFeedArticle value, $Res Function(RssFeedArticle) then) =
-      _$RssFeedArticleCopyWithImpl<$Res, RssFeedArticle>;
+abstract class $ArticleCopyWith<$Res> {
+  factory $ArticleCopyWith(Article value, $Res Function(Article) then) =
+      _$ArticleCopyWithImpl<$Res, Article>;
   @useResult
   $Res call({String title, DateTime pubDate, String enclosureUrl});
 }
 
 /// @nodoc
-class _$RssFeedArticleCopyWithImpl<$Res, $Val extends RssFeedArticle>
-    implements $RssFeedArticleCopyWith<$Res> {
-  _$RssFeedArticleCopyWithImpl(this._value, this._then);
+class _$ArticleCopyWithImpl<$Res, $Val extends Article>
+    implements $ArticleCopyWith<$Res> {
+  _$ArticleCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -69,22 +67,21 @@ class _$RssFeedArticleCopyWithImpl<$Res, $Val extends RssFeedArticle>
 }
 
 /// @nodoc
-abstract class _$$RssFeedArticleImplCopyWith<$Res>
-    implements $RssFeedArticleCopyWith<$Res> {
-  factory _$$RssFeedArticleImplCopyWith(_$RssFeedArticleImpl value,
-          $Res Function(_$RssFeedArticleImpl) then) =
-      __$$RssFeedArticleImplCopyWithImpl<$Res>;
+abstract class _$$ArticleImplCopyWith<$Res> implements $ArticleCopyWith<$Res> {
+  factory _$$ArticleImplCopyWith(
+          _$ArticleImpl value, $Res Function(_$ArticleImpl) then) =
+      __$$ArticleImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String title, DateTime pubDate, String enclosureUrl});
 }
 
 /// @nodoc
-class __$$RssFeedArticleImplCopyWithImpl<$Res>
-    extends _$RssFeedArticleCopyWithImpl<$Res, _$RssFeedArticleImpl>
-    implements _$$RssFeedArticleImplCopyWith<$Res> {
-  __$$RssFeedArticleImplCopyWithImpl(
-      _$RssFeedArticleImpl _value, $Res Function(_$RssFeedArticleImpl) _then)
+class __$$ArticleImplCopyWithImpl<$Res>
+    extends _$ArticleCopyWithImpl<$Res, _$ArticleImpl>
+    implements _$$ArticleImplCopyWith<$Res> {
+  __$$ArticleImplCopyWithImpl(
+      _$ArticleImpl _value, $Res Function(_$ArticleImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +91,7 @@ class __$$RssFeedArticleImplCopyWithImpl<$Res>
     Object? pubDate = null,
     Object? enclosureUrl = null,
   }) {
-    return _then(_$RssFeedArticleImpl(
+    return _then(_$ArticleImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -113,8 +110,8 @@ class __$$RssFeedArticleImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RssFeedArticleImpl implements _RssFeedArticle {
-  const _$RssFeedArticleImpl(
+class _$ArticleImpl implements _Article {
+  const _$ArticleImpl(
       {required this.title, required this.pubDate, required this.enclosureUrl});
 
   @override
@@ -126,14 +123,14 @@ class _$RssFeedArticleImpl implements _RssFeedArticle {
 
   @override
   String toString() {
-    return 'RssFeedArticle(title: $title, pubDate: $pubDate, enclosureUrl: $enclosureUrl)';
+    return 'Article(title: $title, pubDate: $pubDate, enclosureUrl: $enclosureUrl)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RssFeedArticleImpl &&
+            other is _$ArticleImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.pubDate, pubDate) || other.pubDate == pubDate) &&
             (identical(other.enclosureUrl, enclosureUrl) ||
@@ -146,16 +143,15 @@ class _$RssFeedArticleImpl implements _RssFeedArticle {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RssFeedArticleImplCopyWith<_$RssFeedArticleImpl> get copyWith =>
-      __$$RssFeedArticleImplCopyWithImpl<_$RssFeedArticleImpl>(
-          this, _$identity);
+  _$$ArticleImplCopyWith<_$ArticleImpl> get copyWith =>
+      __$$ArticleImplCopyWithImpl<_$ArticleImpl>(this, _$identity);
 }
 
-abstract class _RssFeedArticle implements RssFeedArticle {
-  const factory _RssFeedArticle(
+abstract class _Article implements Article {
+  const factory _Article(
       {required final String title,
       required final DateTime pubDate,
-      required final String enclosureUrl}) = _$RssFeedArticleImpl;
+      required final String enclosureUrl}) = _$ArticleImpl;
 
   @override
   String get title;
@@ -165,6 +161,6 @@ abstract class _RssFeedArticle implements RssFeedArticle {
   String get enclosureUrl;
   @override
   @JsonKey(ignore: true)
-  _$$RssFeedArticleImplCopyWith<_$RssFeedArticleImpl> get copyWith =>
+  _$$ArticleImplCopyWith<_$ArticleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
