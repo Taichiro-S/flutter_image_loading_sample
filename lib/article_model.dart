@@ -6,7 +6,6 @@ part 'article_model.freezed.dart';
 @freezed
 class Article with _$Article {
   const factory Article({
-    required String title,
     required DateTime pubDate,
     required String enclosureUrl,
   }) = _Article;
@@ -21,7 +20,6 @@ class Article with _$Article {
       parsedDate = DateTime.now();
     }
     return Article(
-      title: node.findElements('title').first.value ?? '',
       pubDate: parsedDate,
       enclosureUrl:
           node.findElements('enclosure').first.getAttribute('url') ?? '',

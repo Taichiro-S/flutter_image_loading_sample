@@ -1,12 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_loading_sample/format_published_date.dart';
 import 'package:image_loading_sample/article_model.dart';
 import 'package:image_loading_sample/skelton_container_widget.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
 
-class ArticleContainerWidget extends ConsumerWidget {
+class ArticleContainerWidget extends StatelessWidget {
   const ArticleContainerWidget({
     super.key,
     required this.article,
@@ -14,7 +13,7 @@ class ArticleContainerWidget extends ConsumerWidget {
   final Article article;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final now = DateTime.now();
     final publishedDate = formatPublishedDate(article.pubDate, now);
     return StickyHeaderBuilder(
@@ -56,13 +55,10 @@ class ArticleContainerWidget extends ConsumerWidget {
                   ? CachedNetworkImage(
                       imageUrl: article.enclosureUrl,
                       placeholder: (context, url) => SkeltonContainerWidget(
-                          width: MediaQuery.of(context).size.width,
-                          height: 180,
-                          radius: 10),
-                      errorWidget: (context, url, error) => const Image(
-                          image: AssetImage('assets/images/no_image.png')))
-                  : const Image(
-                      image: AssetImage('assets/images/no_image.png')),
+                          width: MediaQuery.of(context).size.width),
+                      errorWidget: (context, url, error) =>
+                          const Image(image: AssetImage('assets/no_image.png')))
+                  : const Image(image: AssetImage('assets/no_image.png')),
             )
           ],
         ));
