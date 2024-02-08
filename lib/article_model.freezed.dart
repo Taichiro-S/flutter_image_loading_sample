@@ -12,11 +12,10 @@ part of 'article_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Article {
-  String get title => throw _privateConstructorUsedError;
   DateTime get pubDate => throw _privateConstructorUsedError;
   String get enclosureUrl => throw _privateConstructorUsedError;
 
@@ -29,7 +28,7 @@ abstract class $ArticleCopyWith<$Res> {
   factory $ArticleCopyWith(Article value, $Res Function(Article) then) =
       _$ArticleCopyWithImpl<$Res, Article>;
   @useResult
-  $Res call({String title, DateTime pubDate, String enclosureUrl});
+  $Res call({DateTime pubDate, String enclosureUrl});
 }
 
 /// @nodoc
@@ -45,15 +44,10 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = null,
     Object? pubDate = null,
     Object? enclosureUrl = null,
   }) {
     return _then(_value.copyWith(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
       pubDate: null == pubDate
           ? _value.pubDate
           : pubDate // ignore: cast_nullable_to_non_nullable
@@ -73,7 +67,7 @@ abstract class _$$ArticleImplCopyWith<$Res> implements $ArticleCopyWith<$Res> {
       __$$ArticleImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String title, DateTime pubDate, String enclosureUrl});
+  $Res call({DateTime pubDate, String enclosureUrl});
 }
 
 /// @nodoc
@@ -87,15 +81,10 @@ class __$$ArticleImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = null,
     Object? pubDate = null,
     Object? enclosureUrl = null,
   }) {
     return _then(_$ArticleImpl(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
       pubDate: null == pubDate
           ? _value.pubDate
           : pubDate // ignore: cast_nullable_to_non_nullable
@@ -111,11 +100,8 @@ class __$$ArticleImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ArticleImpl implements _Article {
-  const _$ArticleImpl(
-      {required this.title, required this.pubDate, required this.enclosureUrl});
+  const _$ArticleImpl({required this.pubDate, required this.enclosureUrl});
 
-  @override
-  final String title;
   @override
   final DateTime pubDate;
   @override
@@ -123,7 +109,7 @@ class _$ArticleImpl implements _Article {
 
   @override
   String toString() {
-    return 'Article(title: $title, pubDate: $pubDate, enclosureUrl: $enclosureUrl)';
+    return 'Article(pubDate: $pubDate, enclosureUrl: $enclosureUrl)';
   }
 
   @override
@@ -131,14 +117,13 @@ class _$ArticleImpl implements _Article {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ArticleImpl &&
-            (identical(other.title, title) || other.title == title) &&
             (identical(other.pubDate, pubDate) || other.pubDate == pubDate) &&
             (identical(other.enclosureUrl, enclosureUrl) ||
                 other.enclosureUrl == enclosureUrl));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, title, pubDate, enclosureUrl);
+  int get hashCode => Object.hash(runtimeType, pubDate, enclosureUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -149,12 +134,9 @@ class _$ArticleImpl implements _Article {
 
 abstract class _Article implements Article {
   const factory _Article(
-      {required final String title,
-      required final DateTime pubDate,
+      {required final DateTime pubDate,
       required final String enclosureUrl}) = _$ArticleImpl;
 
-  @override
-  String get title;
   @override
   DateTime get pubDate;
   @override

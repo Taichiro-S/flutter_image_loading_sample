@@ -1,27 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:skeleton_text/skeleton_text.dart';
 
-class SkeltonContainerWidget extends ConsumerWidget {
-  const SkeltonContainerWidget(
-      {super.key,
-      required this.width,
-      required this.height,
-      required this.radius});
+class SkeltonContainerWidget extends StatelessWidget {
+  const SkeltonContainerWidget({
+    super.key,
+    required this.width,
+  });
   final double width;
-  final double height;
-  final double radius;
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return SkeletonAnimation(
         child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
             child: Container(
               width: width,
-              height: height,
+              height: 180,
               decoration: BoxDecoration(
                   color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(radius)),
+                  borderRadius: BorderRadius.circular(10)),
             )));
   }
 }
