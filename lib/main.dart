@@ -15,15 +15,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Image Loading Sample',
-        theme: ThemeData(
+        darkTheme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Zenn Rss Feed'),
-          ),
-          body: const RssFeedPage(),
-        ));
+        home: const RssFeedPage());
   }
 }
